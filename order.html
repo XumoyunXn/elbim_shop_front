@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Black Pant — ELBIM Fashion & Textile</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:{dark:'#0a2540',navy:'#002B49',teal:'#00a896',cyan:'#0284c7',light:'#e0f2fe'}}}}}</script>
+
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    }
+    .fade-in {
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-[#fafafa] text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- TOP HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <!-- Tech Silk Icon/Logo Graphic -->
+                        <!-- <div class="w-10 h-10 rounded-xl gradient-brand-bg flex items-center justify-center text-white shadow-md shadow-brand-teal/20">
+                            <i class="fa-solid fa-microchip text-lg"></i>
+                        </div> -->
+                        <div class="flex flex-col">
+                            <img src="./img/logo.png" style="width: 150px;" alt="">
+                            <!-- <span class="text-xl font-black tracking-widest text-[#0a2540] uppercase">ELBIM</span>
+                            <span class="text-[9px] tracking-widest text-brand-teal font-bold uppercase -mt-1">TEXTILE TECHNOLOGY</span> -->
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
+                    <a href="index.html" class="text-[#0a2540] font-bold border-b-2 border-brand-teal pb-1">Asosiy</a>
+                    <a href="index.html#kategoriyalar" class="hover:text-brand-teal transition-colors">Kategoriyalar</a>
+                    <a href="index.html#biz-haqimizda" class="hover:text-brand-teal transition-colors">Biz haqimizda</a>
+                    <a href="index.html#boglanish" class="hover:text-brand-teal transition-colors">Bog'lanish</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center space-x-5">
+                    <!-- Search Input -->
+                    <div class="relative hidden sm:block w-64">
+                        <input id="searchInput" type="text" placeholder="Mahsulotlar qidiruvi..." class="w-full pl-4 pr-10 py-2 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/30 transition-all">
+                        <button class="absolute right-3 top-2.5 text-gray-400 hover:text-brand-dark">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Action Icons -->
+                    <a href="#" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-regular fa-heart text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-regular fa-user text-xl"></i>
+                    </a>
+                    <a href="order.html?cart=1" id="cartLink" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cartBadge" class="absolute -top-1.5 -right-2 bg-brand-teal text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+    
+    <!-- BREADCRUMB -->
+    <div class="flex items-center gap-2 text-xs text-gray-400 mb-6">
+      <a href="index.html" class="hover:text-black">Asosiy</a>
+      <span>/</span>
+      <a href="product.html" class="hover:text-black">Mahsulotlar</a>
+      <span>/</span>
+      <a id="bcCategory" href="product.html" class="hover:text-black"></a>
+      <span>/</span>
+      <span id="bcName" class="text-gray-800 font-medium"></span>
+    </div>
+
+    <!-- PRODUCT MAIN SECTION -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+      
+      <!-- LEFT: IMAGES GALLERY (6 Cols) -->
+      <div class="lg:col-span-6 flex flex-col sm:flex-row gap-4">
+        <!-- Thumbnail List -->
+        <div id="thumbnailContainer" class="flex sm:flex-col gap-3 order-2 sm:order-1 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
+          <!-- Thumbnails injected dynamically -->
+        </div>
+
+        <!-- Main Display Image -->
+        <div class="relative flex-1 bg-gray-100 rounded-lg overflow-hidden h-[420px] sm:h-[500px] order-1 sm:order-2 group">
+          <span id="newBadge" class="absolute top-4 left-4 bg-[#E0A96D] text-black text-xs font-bold px-2.5 py-1 rounded z-10 shadow-sm">Yangi</span>
+          
+          <button id="mainWishlistBtn" onclick="toggleWishlist()" class="absolute top-4 right-4 bg-white/80 hover:bg-white p-2 rounded-full backdrop-blur-sm text-gray-600 transition z-10 shadow-sm">
+            <i id="wishlistIcon" data-lucide="heart" class="w-4 h-4"></i>
+          </button>
+
+          <!-- Main Image Canvas -->
+          <img id="mainProductImage" src="" alt="Classic Black Pant" class="w-full h-full object-cover cursor-zoom-in transition-all duration-300 fade-in" onclick="openLightbox()">
+          
+          <!-- Prev / Next Controls -->
+          <button onclick="changeSlide(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition opacity-80 group-hover:opacity-100">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button onclick="changeSlide(1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow hover:bg-white transition opacity-80 group-hover:opacity-100">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+
+          <!-- Zoom Hint -->
+          <span class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm pointer-events-none opacity-0 group-hover:opacity-100 transition">Kattalashtirish uchun bosing</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: PRODUCT DETAILS (6 Cols) -->
+      <div class="lg:col-span-6 flex flex-col justify-between">
+        <div>
+          <p id="pdCategory" class="text-xs text-gray-400 uppercase tracking-wider mb-1 font-semibold"></p>
+          <h1 id="pdName" class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2"></h1>
+          
+          <!-- Rating -->
+          <div class="flex items-center gap-2 mb-4 text-xs">
+            <div class="flex text-amber-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+            </div>
+            <!-- <span class="font-bold text-gray-800">4.8</span>
+            <span id="reviewCountHeader" class="text-gray-400">(124 ta sharh)</span> -->
+          </div>
+
+          <!-- Price -->
+          <div id="pdPrice" class="flex items-center gap-3 mb-4"></div>
+
+          <p id="pdDesc" class="text-xs sm:text-sm text-gray-500 leading-relaxed mb-6">
+            Kunlik kiyinish uchun mos keluvchi Classic Black Pant. Sifatli mato, mustahkam chok va zamonaviy bichim. Ish va dam olish uchun qulay tanlov.
+          </p>
+
+          <!-- Color Swatches -->
+          <div id="colorBlock" class="mb-6">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold text-gray-800">Rang: <span id="selectedColorLabel" class="text-gray-500 font-normal">Qora</span></label>
+            </div>
+            <div id="colorContainer" class="flex items-center gap-2.5">
+              <!-- Colors injected dynamically -->
+            </div>
+          </div>
+
+          <!-- Sizes -->
+          <div id="sizeBlock" class="mb-6">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold text-gray-800">O'lcham: <span id="selectedSizeLabel" class="text-gray-500 font-normal">—</span></label>
+              <button onclick="switchTab('size-chart')" class="text-[11px] text-gray-500 underline flex items-center gap-1 hover:text-black">
+                <i data-lucide="ruler" class="w-3 h-3"></i> O'lcham jadvali
+              </button>
+            </div>
+            <div id="sizeContainer" class="grid grid-cols-5 gap-2">
+              <!-- Sizes injected dynamically -->
+            </div>
+            <p id="sizeError" class="text-red-500 text-[11px] mt-1 hidden">Iltimos, o'lchamni tanlang!</p>
+          </div>
+
+          <!-- Quantity & Add to Cart -->
+          <div class="flex gap-3 mb-8">
+            <div class="flex items-center border border-gray-300 rounded-md bg-white">
+              <button onclick="updateQty(-1)" class="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold transition rounded-l-md">-</button>
+              <input id="qtyInput" type="text" value="1" readonly class="w-10 text-center text-xs font-bold focus:outline-none bg-transparent">
+              <button onclick="updateQty(1)" class="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold transition rounded-r-md">+</button>
+            </div>
+            <button onclick="addToCartMain()" class="flex-1 bg-black text-white py-3 rounded-md text-xs font-bold hover:bg-gray-800 transition active:scale-[0.99] flex items-center justify-center gap-2 shadow-md">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i> Savatchaga qo'shish
+            </button>
+            <button onclick="toggleWishlist()" class="p-3 border border-gray-300 rounded-md hover:border-black transition active:scale-95">
+              <i id="wishlistIconBtn" data-lucide="heart" class="w-4 h-4 text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Features Icons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-gray-200 text-center">
+          <div class="flex flex-col items-center gap-1">
+            <i data-lucide="truck" class="w-5 h-5 text-gray-700"></i>
+            <span class="text-[10px] font-bold text-gray-800">Tez yetkazib berish</span>
+            <span class="text-[9px] text-gray-400">1-2 kun ichida</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <i data-lucide="shield-check" class="w-5 h-5 text-gray-700"></i>
+            <span class="text-[10px] font-bold text-gray-800">Sifat kafolati</span>
+            <span class="text-[9px] text-gray-400">100% original</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <i data-lucide="rotate-ccw" class="w-5 h-5 text-gray-700"></i>
+            <span class="text-[10px] font-bold text-gray-800">Oson qaytarish</span>
+            <span class="text-[9px] text-gray-400">14 kun ichida</span>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <i data-lucide="credit-card" class="w-5 h-5 text-gray-700"></i>
+            <span class="text-[10px] font-bold text-gray-800">Qulay to'lov</span>
+            <span class="text-[9px] text-gray-400">Naqd yoki karta</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TABS SECTION -->
+    <div class="border-b border-gray-200 mb-8 overflow-x-auto">
+      <div id="tabsHeader" class="flex gap-8 text-xs font-bold uppercase tracking-wider whitespace-nowrap min-w-max pb-1">
+        <button onclick="switchTab('desc')" id="tab-btn-desc" class="border-b-2 border-black pb-3 text-black transition">Tavsif</button>
+        <button onclick="switchTab('specs')" id="tab-btn-specs" class="text-gray-400 hover:text-black pb-3 transition">Xususiyatlar</button>
+        <button onclick="switchTab('fabric')" id="tab-btn-fabric" class="text-gray-400 hover:text-black pb-3 transition">Tarkibi</button>
+        <button onclick="switchTab('shipping')" id="tab-btn-shipping" class="text-gray-400 hover:text-black pb-3 transition">Yetkazib berish va qaytarish</button>
+        <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="text-gray-400 hover:text-black pb-3 transition">Sharhlar (<span id="tabReviewsCount">0</span>)</button>
+      </div>
+    </div>
+
+    <!-- TAB CONTENT CONTAINER -->
+    <div class="mb-16 min-h-[220px]">
+      
+      <!-- TAB 1: DESCRIPTION -->
+      <div id="tab-content-desc" class="tab-panel grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+        <div class="md:col-span-2">
+          <h3 class="text-sm font-bold text-gray-900 mb-3">Mahsulot haqida</h3>
+          <p id="descText" class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+            Classic Black Pant — har qanday uslubga mos keladigan zamonaviy shim. Sifatli mato, mustahkam chok va qulay bichim sizga kun davomida erkinlik va shinamlik beradi.
+          </p>
+          <ul class="space-y-2 text-xs text-gray-600">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i> Zamonaviy va bashang bichim</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i> Yub-yumshoq va nafas oluvchi mato</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i> Har kunlik kiyish va rasmiy tadbirlar uchun mos</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i> Yuvilgandan so'ng rangini va shaklini uzoq vaqt saqlaydi</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-gray-900 mb-3">O'lcham haqida</h3>
+          <p class="text-xs text-gray-600 mb-3">
+            Model bo'yi 182 sm, vazni 75 kg. Rasmdagi model M o'lcham kiygan.
+          </p>
+          <div class="rounded-lg overflow-hidden h-36 bg-gray-100 shadow-inner">
+            <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: SPECS -->
+      <div id="tab-content-specs" class="tab-panel hidden fade-in max-w-2xl">
+        <h3 class="text-sm font-bold text-gray-900 mb-3">Texnik Xususiyatlar</h3>
+        <div class="space-y-2 text-xs border-t border-gray-100 pt-2">
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Brend:</span>
+            <span class="font-semibold text-gray-800">ELBIM Fashion</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Model:</span>
+            <span id="specModel" class="font-semibold text-gray-800"></span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Material:</span>
+            <span class="font-semibold text-gray-800">65% pamuk, 30% polyester, 5% elastan</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Bichim:</span>
+            <span class="font-semibold text-gray-800">Straight Fit</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Mavsum:</span>
+            <span class="font-semibold text-gray-800">Bahor / Kuz / Yoz</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-gray-100">
+            <span class="text-gray-500">Rangi:</span>
+            <span id="specColor" class="font-semibold text-gray-800"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: FABRIC -->
+      <div id="tab-content-fabric" class="tab-panel hidden fade-in max-w-2xl">
+        <h3 class="text-sm font-bold text-gray-900 mb-3">Mato va Parvarish</h3>
+        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+          Ushbu mahsulot maxsus ishlov berilgan yuqori sifatli paxta aralashmasidan tayyorlangan. U terining nafas olishini ta'minlaydi va harakatlanishda qulaylik beradi.
+        </p>
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-xs text-gray-700 space-y-2">
+          <p class="font-bold mb-1">Parvarish qilish qoidalari:</p>
+          <p>• 30°C dan yuqori bo'lmagan haroratda yuvilsin.</p>
+          <p>• Oqartiruvchi vositalardan foydalanmang.</p>
+          <p>• O'rtacha haroratda dazmollang.</p>
+          <p>• Kimyoviy tozalashga ruxsat beriladi.</p>
+        </div>
+      </div>
+
+      <!-- TAB 4: SHIPPING -->
+      <div id="tab-content-shipping" class="tab-panel hidden fade-in max-w-2xl">
+        <h3 class="text-sm font-bold text-gray-900 mb-3">Yetkazib berish va Qaytarish shartlari</h3>
+        <div class="space-y-4 text-xs text-gray-600">
+          <div class="bg-white p-3 border border-gray-200 rounded-md">
+            <h4 class="font-bold text-gray-800 mb-1">Toshkent shahar bo'ylab:</h4>
+            <p>1 kun ichida kuryer orqali eshigingizgacha yetkaziladi. Bepul kiyib ko'rish imkoniyati mavjud.</p>
+          </div>
+          <div class="bg-white p-3 border border-gray-200 rounded-md">
+            <h4 class="font-bold text-gray-800 mb-1">Viloyatlarga yetkazish:</h4>
+            <p>BTS yoki Pochta xizmati orqali 2-3 ish kuni ichida yetkazib beriladi.</p>
+          </div>
+          <div class="bg-white p-3 border border-gray-200 rounded-md">
+            <h4 class="font-bold text-gray-800 mb-1">Qaytarish kafolati:</h4>
+            <p>Mahsulot o'lchami yoki sifati ma'qul kelmasa, 14 kun ichida almashtirib beriladi yoki pulingiz to'liq qaytariladi.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: REVIEWS -->
+      <div id="tab-content-reviews" class="tab-panel hidden fade-in">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Reviews List -->
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="text-sm font-bold text-gray-900 mb-2">Mijozlarimiz fikrlari</h3>
+            <div id="reviewsList" class="space-y-3">
+              <!-- Reviews dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Add Review Form -->
+          <div class="bg-gray-50 p-4 sm:p-5 rounded-lg border border-gray-200 h-fit">
+            <h3 class="text-sm font-bold text-gray-900 mb-3">Sharh qoldirish</h3>
+            <form id="reviewForm" onsubmit="handleReviewSubmit(event)" class="space-y-3">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Ismingiz</label>
+                <input type="text" id="reviewAuthor" required placeholder="Masalan: Sardorbek" class="w-full text-xs p-2 border border-gray-300 rounded focus:outline-none focus:border-black bg-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Baho berish</label>
+                <select id="reviewRating" class="w-full text-xs p-2 border border-gray-300 rounded focus:outline-none focus:border-black bg-white">
+                  <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                  <option value="4">⭐⭐⭐⭐ (4/5)</option>
+                  <option value="3">⭐⭐⭐ (3/5)</option>
+                  <option value="2">⭐⭐ (2/5)</option>
+                  <option value="1">⭐ (1/5)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Fikringiz</label>
+                <textarea id="reviewText" required rows="3" placeholder="Mahsulot haqida taassurotlaringizni yozing..." class="w-full text-xs p-2 border border-gray-300 rounded focus:outline-none focus:border-black bg-white"></textarea>
+              </div>
+              <button type="submit" class="w-full py-2 bg-black text-white text-xs font-bold rounded hover:bg-gray-800 transition">Sharh yuborish</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GALLERY GRID UNDER DETAILS -->
+    <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-16">
+      <!-- Injected dynamically -->
+    </div>
+
+    <!-- RELATED PRODUCTS CAROUSEL / SLIDER -->
+    <div class="mb-12">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-lg font-bold text-gray-900">O'xshash mahsulotlar</h2>
+        <div class="flex gap-2">
+          <button onclick="scrollRelated(-1)" class="p-2 border border-gray-300 rounded-full hover:bg-black hover:text-white transition">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button onclick="scrollRelated(1)" class="p-2 border border-gray-300 rounded-full hover:bg-black hover:text-white transition">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel Container -->
+      <div id="relatedSlider" class="flex gap-4 overflow-x-auto scroll-smooth custom-scrollbar pb-4 snap-x">
+        <!-- Related items injected dynamically -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0a2540] text-white mt-auto border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                
+                <!-- Logo & Rights -->
+                <div class="text-center md:text-left">
+                    <a href="#" class="inline-flex items-center space-x-2">
+                        <img src="./img/logo_white.png" style="width: 150px;" alt="">
+                        <!-- <span class="text-xl font-black tracking-widest text-white uppercase">ELBIM</span>
+                        <span class="text-xs text-brand-teal font-bold tracking-wider uppercase">TEXTILE TECHNOLOGY</span> -->
+                    </a>
+                    <p class="text-xs text-gray-400 mt-2">© 2026 ELBIM. Barcha huquqlar himoyalangan.</p>
+                </div>
+
+                <!-- Footer Nav -->
+                <div class="flex flex-wrap justify-center space-x-6 text-xs text-gray-300 font-medium">
+                    <a href="#" class="hover:text-brand-teal transition-colors">Asosiy</a>
+                    <a href="index.html#kategoriyalar" class="hover:text-brand-teal transition-colors">Kategoriyalar</a>
+                    <a href="index.html#biz-haqimizda" class="hover:text-brand-teal transition-colors">Biz haqimizda</a>
+                    <a href="index.html#boglanish" class="hover:text-brand-teal transition-colors">Bog'lanish</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4 text-gray-300">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+  <!-- CART DRAWER / SLIDE OVER -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none hidden">
+    <div id="cartBackdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+    <div id="cartPanel" class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl transition-transform duration-300 translate-x-full pointer-events-auto flex flex-col">
+      <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-800"></i>
+          <h3 class="font-bold text-sm text-gray-900">Sizning Savatchangiz</h3>
+        </div>
+        <button onclick="toggleCartDrawer()" class="p-1 text-gray-500 hover:text-black">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
+        <!-- Cart items injected dynamically -->
+      </div>
+
+      <div class="p-4 border-t border-gray-200 bg-gray-50 space-y-3">
+        <div class="flex justify-between items-center text-sm font-bold text-gray-900">
+          <span>Jami summasi:</span>
+          <span id="cartTotalPrice">0 so'm</span>
+        </div>
+        <button onclick="checkout()" class="w-full py-3 bg-black text-white text-xs font-bold rounded-md hover:bg-gray-800 transition">
+          Buyurtmani Rasmiylashtirish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX / IMAGE MODAL -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white p-2 hover:bg-white/20 rounded-full transition">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <img id="lightboxImage" src="" class="max-h-[90vh] max-w-[90vw] object-contain rounded">
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/order.js"></script>
+</body>
+</html>

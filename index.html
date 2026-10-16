@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELBIM - Textile Technology</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a2540',
+                            navy: '#002B49',
+                            teal: '#00a896',
+                            cyan: '#0284c7',
+                            light: '#e0f2fe'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-slide {
+            transition: opacity 1s ease-in-out;
+        }
+        .gradient-brand-text {
+            background: linear-gradient(135deg, #0284c7 0%, #00a896 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-brand-bg {
+            background: linear-gradient(135deg, #0a2540 0%, #002B49 50%, #00a896 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <!-- Tech Silk Icon/Logo Graphic -->
+                        <!-- <div class="w-10 h-10 rounded-xl gradient-brand-bg flex items-center justify-center text-white shadow-md shadow-brand-teal/20">
+                            <i class="fa-solid fa-microchip text-lg"></i>
+                        </div> -->
+                        <div class="flex flex-col">
+                            <img src="./img/logo.png" style="width: 150px;" alt="">
+                            <!-- <span class="text-xl font-black tracking-widest text-[#0a2540] uppercase">ELBIM</span>
+                            <span class="text-[9px] tracking-widest text-brand-teal font-bold uppercase -mt-1">TEXTILE TECHNOLOGY</span> -->
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
+                    <a href="index.html" class="text-[#0a2540] font-bold border-b-2 border-brand-teal pb-1">Asosiy</a>
+                    <a href="#kategoriyalar" class="hover:text-brand-teal transition-colors">Kategoriyalar</a>
+                    <a href="#biz-haqimizda" class="hover:text-brand-teal transition-colors">Biz haqimizda</a>
+                    <a href="#boglanish" class="hover:text-brand-teal transition-colors">Bog'lanish</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center space-x-5">
+                    <!-- Search Input -->
+                    <div class="relative hidden sm:block w-64">
+                        <input id="searchInput" type="text" placeholder="Mahsulotlar qidiruvi..." class="w-full pl-4 pr-10 py-2 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/30 transition-all">
+                        <button class="absolute right-3 top-2.5 text-gray-400 hover:text-brand-dark">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Action Icons -->
+                    <a href="#" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-regular fa-heart text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-regular fa-user text-xl"></i>
+                    </a>
+                    <a href="order.html?cart=1" id="cartLink" class="text-gray-700 hover:text-brand-teal transition-colors relative">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cartBadge" class="absolute -top-1.5 -right-2 bg-brand-teal text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section (Background Image Slider) -->
+    <section class="relative w-full h-[520px] md:h-[600px] bg-black overflow-hidden">
+        
+        <!-- Background Image Slides Container -->
+        <div id="carousel-slides" class="absolute inset-0 w-full h-full">
+            
+            <!-- Slide 1 -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-100 bg-cover bg-center transition-opacity duration-1000"
+                 style="background-image: url('https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0a2540]/90 via-[#0a2540]/60 to-transparent"></div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 bg-cover bg-center transition-opacity duration-1000"
+                 style="background-image: url('./img/ayol_uchun.avif');">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0a2540]/90 via-[#0a2540]/60 to-transparent"></div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 bg-cover bg-center transition-opacity duration-1000"
+                 style="background-image: url('./img/ipak.png');">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0a2540]/90 via-[#0a2540]/60 to-transparent"></div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 bg-cover bg-center transition-opacity duration-1000"
+                 style="background-image: url('./img/matral.webp');">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0a2540]/90 via-[#0a2540]/60 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Hero Text & Controls Overlay Container -->
+        <div class="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+            
+            <!-- Left Static/Interactive Content Overlay -->
+            <div class="max-w-xl text-white space-y-5">
+                <!-- <span class="inline-block text-xs font-bold tracking-widest text-emerald-300 uppercase bg-emerald-400/20 px-3.5 py-1 rounded-full border border-emerald-400/30 backdrop-blur-md">
+                    INNOVATING THE FABRIC OF TOMORROW
+                </span> -->
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                    <span class="gradient-brand-text">ELBIM TEXTILE TECHNOLOGY</span> zamonaviy tekstil mahsulotlari  taklif qiluvchi kompaniya.
+                </h1>
+                <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+                    Sifatli tekstil mahsulotlari, zamonaviy shimlar, turli xil matolar, Ipaklar va materiallar. Biz har bir mahsulotda sifat va qulaylikni uyg‘unlashtirishga intilamiz.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="product.html" class="px-6 py-3.5 bg-brand-teal hover:bg-emerald-600 text-white font-bold rounded-lg text-sm transition-all shadow-lg shadow-brand-teal/30 flex items-center space-x-2">
+                        <span>Xarid qilish</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#kategoriyalar" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold rounded-lg text-sm border border-white/30 transition-all flex items-center space-x-2">
+                        <span>Kategoriyalarga o'tish</span>
+                        <i class="fa-solid fa-angle-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation Arrows -->
+            <div class="absolute right-4 sm:right-8 bottom-8 flex space-x-3">
+                <button id="prevBtn" class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/30 border border-white/20 text-white flex items-center justify-center transition-all focus:outline-none">
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+                </button>
+                <button id="nextBtn" class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/30 border border-white/20 text-white flex items-center justify-center transition-all focus:outline-none">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Carousel Dots Indicators -->
+            <div id="carousel-dots" class="absolute bottom-8 left-4 sm:left-8 flex space-x-2">
+                <button class="w-8 h-2 rounded-full bg-brand-teal transition-all" data-index="0"></button>
+                <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="1"></button>
+                <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="2"></button>
+                <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="3"></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="kategoriyalar" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-teal">O'zingiz uchun eng yaxshisini tanlang</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0a2540] mt-1">Kategoriyalar</h2>
+                </div>
+                <!-- <a href="#" class="hidden sm:flex items-center text-sm font-semibold text-gray-600 hover:text-brand-teal transition-colors space-x-1">
+                    <span>Barcha kategoriyalar</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a> -->
+            </div>
+
+            <!-- Grid -->
+            <div id="categoriesGrid" class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+                <div class="col-span-full text-center text-gray-400 text-sm py-12">Yuklanmoqda...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section id="mahsulotlar" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-teal">Ko'p sotilayotgan shimlari va matolar</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0a2540] mt-1">Mashhur mahsulotlar </h2>
+                </div>
+                <!-- <a href="#" class="hidden sm:flex items-center text-sm font-semibold text-gray-600 hover:text-brand-teal transition-colors space-x-1">
+                    <span>Barcha mahsulotlar</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a> -->
+            </div>
+
+            <!-- Products Grid -->
+            <div id="popularGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="col-span-full text-center text-gray-400 text-sm py-12">Yuklanmoqda...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Banner & Features -->
+    <section id="biz-haqimizda" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                
+                <!-- Left Banner Card -->
+                <div class="relative rounded-2xl overflow-hidden h-96 gradient-brand-bg text-white flex items-center p-8 sm:p-12">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1000&auto=format&fit=crop" alt="ELBIM Quality" class="absolute inset-0 w-full h-full object-cover opacity-20">
+                    <div class="relative z-10 max-w-md space-y-4">
+                        <span class="text-xs font-bold tracking-widest text-emerald-300 uppercase">ELBIM TEXTILE TECHNOLOGY</span>
+                        <h2 class="text-3xl font-extrabold leading-tight">Sifat va uslub uyg'unligi</h2>
+                        <p class="text-gray-200 text-sm leading-relaxed">
+                            Zamonaviy texnologik va innovatsion yechimlar bilan yuqori darajadagi tekstil mahsulotlarini taklif etamiz.
+                        </p>
+                        <!-- <a href="#boglanish" class="inline-block px-6 py-3 bg-brand-teal hover:bg-emerald-600 text-white font-bold text-xs rounded-lg transition-colors shadow-md">
+                            Batafsil ma'lumot <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+                <!-- Right Feature Grid -->
+                <div class="grid grid-cols-2 gap-6 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 text-brand-teal flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="font-bold text-[#0a2540] text-base">Tez yetkazib berish</h3>
+                        <p class="text-xs text-gray-500">Xavfsiz va tezkor yetkazib berish xizmati.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 text-brand-teal flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-[#0a2540] text-base">Oliy sifat</h3>
+                        <p class="text-xs text-gray-500">Sinovdan o'tgan xom-ashyo va yuqori sifat nazorati.</p>
+                    </div>
+<!-- 
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 text-brand-teal flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="font-bold text-[#0a2540] text-base">Oson qaytarish</h3>
+                        <p class="text-xs text-gray-500">Sifat talabga javob bermasa, qaytarish kafolatlangan.</p>
+                    </div> -->
+
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 text-brand-teal flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="font-bold text-[#0a2540] text-base">Quvvatlov 24/7</h3>
+                        <p class="text-xs text-gray-500">Mutaxassislarimiz savollaringizga har doim javob beradi.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order Section -->
+    <section id="boglanish" class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Info & Banner -->
+                <div class="space-y-6">
+                    <div class="rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" alt="ELBIM Store" class="w-full h-64 object-cover">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Biz bilan bog'laning</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0a2540] mt-1">Savollaringiz bormi?</h2>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Biz bilan bog'laning yoki so'rov qoldiring, mutaxassislarimiz sizga darhol yordam berishadi.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center space-x-3 text-sm text-gray-700">
+                            <div class="w-8 h-8 rounded-full bg-cyan-50 text-brand-teal flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="font-semibold text-[#0a2540]">+998 93 555 13 51</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-gray-700">
+                            <div class="w-8 h-8 rounded-full bg-cyan-50 text-brand-teal flex items-center justify-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="font-semibold text-[#0a2540]">ferhad@elbimgroup.uz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-[#0a2540] mb-4">So'rov yuborish</h3>
+                    <form id="contactForm" class="space-y-4" onsubmit="event.preventDefault(); showToast('Xabaringiz muvaffaqiyatli yuborildi!');">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Ismingiz</label>
+                            <input type="text" required placeholder="Ismingizni kiriting" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/30">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Telefon raqamingiz</label>
+                            <input type="tel" required placeholder="+998 90 000 00 00" class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/30">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Xabar yoki savol</label>
+                            <textarea rows="3" placeholder="Xabaringizni yozing..." class="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-teal/30"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-brand-teal hover:bg-emerald-600 text-white font-bold text-sm rounded-lg transition-colors shadow-md">
+                            Xabar yuborish <i class="fa-solid fa-paper-plane ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a2540] text-white mt-auto border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                
+                <!-- Logo & Rights -->
+                <div class="text-center md:text-left">
+                    <a href="#" class="inline-flex items-center space-x-2">
+                        <img src="./img/logo_white.png" style="width: 150px;" alt="">
+                        <!-- <span class="text-xl font-black tracking-widest text-white uppercase">ELBIM</span>
+                        <span class="text-xs text-brand-teal font-bold tracking-wider uppercase">TEXTILE TECHNOLOGY</span> -->
+                    </a>
+                    <p class="text-xs text-gray-400 mt-2">© 2026 ELBIM. Barcha huquqlar himoyalangan.</p>
+                </div>
+
+                <!-- Footer Nav -->
+                <div class="flex flex-wrap justify-center space-x-6 text-xs text-gray-300 font-medium">
+                    <a href="#" class="hover:text-brand-teal transition-colors">Asosiy</a>
+                    <a href="#kategoriyalar" class="hover:text-brand-teal transition-colors">Kategoriyalar</a>
+                    <a href="#biz-haqimizda" class="hover:text-brand-teal transition-colors">Biz haqimizda</a>
+                    <a href="#boglanish" class="hover:text-brand-teal transition-colors">Bog'lanish</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4 text-gray-300">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-teal hover:text-white transition-all">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast UI -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-[#0a2540] text-white px-5 py-3 rounded-xl shadow-2xl border border-brand-teal text-sm transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-2 z-50">
+        <i class="fa-solid fa-circle-check text-brand-teal text-lg"></i>
+        <span id="toast-message">Muvaffaqiyatli yuborildi!</span>
+    </div>
+
+    <!-- JavaScript Carousel & UI Logic -->
+    <script>
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('#carousel-dots button');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                if (index < 0) {
+                    currentIndex = slideCount - 1;
+                } else if (index >= slideCount) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+
+                slides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        slide.classList.remove('opacity-0');
+                        slide.classList.add('opacity-100');
+                    } else {
+                        slide.classList.remove('opacity-100');
+                        slide.classList.add('opacity-0');
+                    }
+                });
+
+                dots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.className = "w-8 h-2 rounded-full bg-brand-teal transition-all";
+                    } else {
+                        dot.className = "w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all";
+                    }
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoPlay() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAutoPlay();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAutoPlay();
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.getAttribute('data-index'));
+                    showSlide(idx);
+                    startAutoPlay();
+                });
+            });
+
+            const heroSection = document.querySelector('section');
+            heroSection.addEventListener('mouseenter', stopAutoPlay);
+            heroSection.addEventListener('mouseleave', startAutoPlay);
+
+            showSlide(0);
+            startAutoPlay();
+        });
+    </script>
+<script src="./js/api.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
